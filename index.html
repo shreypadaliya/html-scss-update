@@ -14,79 +14,355 @@
     />
     <!-- <link rel="stylesheet" href="./sass/main.css"> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
-    <style></style>
+    <style>
+      @media (max-width: 991px) {
+        .navtag {
+          display: none;
+        }
+        .logocontainer {
+          display: none;
+        }
+      }
+      @media (max-width: 767.98px) {
+        .sidebar {
+          display: none !important;
+        }
+      }
+      .navtag,
+      .logocontainer {
+        display: block;
+      }
+      .hide {
+        display: none; 
+      }
+      .hamburger-menu {
+        display: none;
+        font-size: 30px;
+        cursor: pointer;
+      }
+      .menu-content {
+          display: none;
+          position: absolute;
+          top: 50px;
+          left: 10px;
+          background-color: cyan;
+          border: 1px solid #ccc;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          z-index: 1000;
+        }
+      @media (max-width: 767.97px) {
+        .hamburger-menu {
+          display: block;
+          cursor: pointer;
+          font-size: 30px;
+          padding: 10px;
+          background-color: #333;
+          color: white;
+        }
+        .menu-content {
+          display: none;
+          position: absolute;
+          top: 50px;
+          left: 10px;
+          background-color: cyan;
+          border: 1px solid #ccc;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          z-index: 1000;
+        }
+      }
+    </style>
   </head>
   <body>
     <div style="background-color: blue; display: flex">
       <div
-        class="siderbar"
-        style="background-color: rgb(255, 255, 255); flex: 1; height: 100vh">
-        <div id="sidebar" style="width: 250px; height: 100%; position: fixed; top: 0; left: 0; background-color: #f8f9fa; overflow-y: auto; transition: 0.3s; padding-top: 20px;">
-            <div style="padding: 10px 15px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e0e0e0;">
-                <img src="https://via.placeholder.com/150x50?text=Dubai+Logo" alt="Dubai Logo" style="height: 40px;">
-                <i id="toggle-btn" class="fas fa-chevron-left" style="cursor: pointer;"></i>
-            </div>
-            <ul id="menu-list" style="list-style-type: none; padding: 0; margin: 0;">
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-tachometer-alt" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Dashboard</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-file-alt" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Induction documents</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-book" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>My programme</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-user-graduate" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Learner handbook</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-calendar-alt" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Calendar event</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-chalkboard-teacher" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>My classes</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-pencil-alt" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>My test</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-school" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>School activities</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-home" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Accommodation</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-link" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Open links</span><i class="fas fa-chevron-down" style="margin-left: auto;"></i></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-file-contract" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Course report</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-comment" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Feedback</span><i class="fas fa-chevron-down" style="margin-left: auto;"></i></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-check" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Grammar test</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-pen" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Writing Test</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-clipboard-check" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Entry test</span><i class="fas fa-chevron-down" style="margin-left: auto;"></i></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-microphone" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Speaking test</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-star" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Class Feedback</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-ticket-alt" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Student Tickets</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-briefcase" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Jobs Board</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-microphone" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>Speaking test</span></li>
-                <li style="padding: 10px 15px; display: flex; align-items: center; cursor: pointer;"><i class="fas fa-pencil-alt" style="margin-right: 10px; width: 20px; text-align: center;"></i><span>My test</span></li>
-            </ul>
-        </div>
-    
-      </div>
-      <div class="" style="flex: 7; background-color: #f3f5f9">
+        class="sidebar"
+        style="
+          background-color: rgb(255, 255, 255);
+          height: auto;
+          width: auto;
+          max-width: 250px;
+          display: block;
+        "
+      >
         <div
-          class="d-flex align-items-center justify-content-end"
-          style="
-            background-color: #f3f5f9;
-            height: 80px;
-            padding-right: 50px;
-            gap: 20px;
-          "
+          class="d-flex justify-content-between align-items-center mt-3 mb-2 p-2"
         >
+          <div>
+            <img
+              src="assets/Group 7011.png"
+              alt="Logo"
+              style="height: auto; width: auto"
+              class="logocontainer"
+            />
+          </div>
           <button
-            type="button"
-            class="btn btn-sm btn-outline-secondary"
+            id="toggleBtn"
+            class="sidebaricon d-flex justify-content-center align-items-center border border-white"
+            style="height: 30px; width: 30px; background-color: #f3f5f9"
+          >
+            <i class="fa-solid fa-greater-than"></i>
+          </button>
+        </div>
+
+        <div id="toggle">
+          <div
+            class="sidenav"
             style="
-              background-color: #eaedf5;
-              color: #303335;
-              font-size: 14px;
-              font-weight: normal;
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
             "
           >
-            Enter to your live class
-          </button>
-          <img
-            src="assets/Group 6956.png"
-            alt="Profile"
-            class="profile-img"
-            style="height: 20px; width: 20px"
-          />
-          <img src="assets/Group 6953.png" alt="Profile" class="profile-img" />
-          <div class="fs-5 fw-normal">Andrea Paez</div>
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <div class="navtag">Dashboard</div>
+          </div>
+
+          <!-- Repeat these elements as needed -->
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+        </div>
+      </div>
+      <div class="positioningbox2" style="flex: 7; background-color: #f3f5f9">
+        <div
+          class="d-flex align-items-center justify-content-between"
+          style="background-color: #f3f5f9; height: 80px; padding: 0 20px"
+        >
+          <div class="hamburger-menu" id="hamburgerMenu">☰</div>
+          <div class="menu-content" id="menuContent">
+            <p>Your menu content goes here!</p>
+            <button id="closeMenu">Close Menu</button>
+          </div>
+          <div></div>
+          <div class="d-flex align-items-center" style="gap: 20px">
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-secondary"
+              style="
+                background-color: #eaedf5;
+                color: #303335;
+                font-size: 14px;
+                font-weight: normal;
+              "
+            >
+              Enter to your live class
+            </button>
+            <img
+              src="assets/Group 6956.png"
+              alt="Profile"
+              class="profile-img"
+              style="height: 20px; width: 20px"
+            />
+            <img
+              src="assets/Group 6953.png"
+              alt="Profile"
+              class="profile-img"
+            />
+            <div class="fs-5 fw-normal">Andrea Paez</div>
+          </div>
         </div>
         <div style="margin-top: 30px">
           <div class="container-fluid">
             <div
-              class="row"
+              class="row positioningbox2"
               style="
                 background-color: #f3f5f9;
                 justify-content: center;
@@ -689,50 +965,55 @@
     <script src="./javascript/testresult.js"></script>
     <script src="./javascript/sidebaropen.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script>
-        const drawerContainer = document.getElementById('drawer-container');
-        const drawerToggle = document.getElementById('drawer-toggle');
-        const sidebar = document.getElementById('sidebar');
-        let isOpen = false;
-
-        drawerToggle.addEventListener('click', () => {
-            isOpen = !isOpen;
-            drawerContainer.style.width = isOpen ? '250px' : '60px';
-            drawerToggle.style.left = isOpen ? '210px' : '10px';
-            drawerToggle.innerHTML = isOpen ? '×' : '☰';
-            sidebar.style.overflowY = isOpen ? 'auto' : 'hidden';
-        });
-    </script> -->
-    
     <script>
-        const sidebar = document.getElementById('sidebar');
-        const toggleBtn = document.getElementById('toggle-btn');
-        const menuItems = document.querySelectorAll('#menu-list li span');
-        let isOpen = true;
+      const toggleBtn = document.getElementById("toggleBtn");
+      const navtags = document.querySelectorAll(".navtag"); // Get all navtag elements
+      const logocontainer = document.querySelector(".logocontainer"); // Get logo
 
-        toggleBtn.addEventListener('click', () => {
-            isOpen = !isOpen;
-            if (isOpen) {
-                sidebar.style.width = '250px';
-                toggleBtn.className = 'fas fa-chevron-left';
-                menuItems.forEach(item => item.style.display = 'inline');
-            } else {
-                sidebar.style.width = '60px';
-                toggleBtn.className = 'fas fa-chevron-right';
-                menuItems.forEach(item => item.style.display = 'none');
-            }
-        });
+      toggleBtn.addEventListener("click", function () {
+        // Toggle the logo visibility
+        logocontainer.classList.toggle("hide");
 
-        // Add hover effect
-        const listItems = document.querySelectorAll('#menu-list li');
-        listItems.forEach(item => {
-            item.addEventListener('mouseover', () => {
-                item.style.backgroundColor = '#e9ecef';
-            });
-            item.addEventListener('mouseout', () => {
-                item.style.backgroundColor = '';
-            });
+        // Loop through all navtags and toggle the hide class
+        navtags.forEach(function (navtag) {
+          navtag.classList.toggle("hide");
         });
+      });
+    </script>
+    <script>
+      document
+        .getElementById("hamburgerMenu")
+        .addEventListener("click", function () {
+          const positioningBox1 = document.querySelector(".positioningbox1");
+          positioningBox1.classList.toggle("sidebar"); // Toggle 'open' class to show or hide sidebar
+
+          // Optional: Change the hamburger icon to an "X" when open
+          this.innerHTML = positioningBox1.classList.contains("open")
+            ? "✖"
+            : "☰";
+        });
+    </script>
+    <script>
+      const hamburgerMenu = document.getElementById("hamburgerMenu");
+      const menuContent = document.getElementById("menuContent");
+      const closeMenu = document.getElementById("closeMenu");
+
+      // Toggle menu visibility on hamburger menu click
+      hamburgerMenu.addEventListener("click", () => {
+        if (
+          menuContent.style.display === "none" ||
+          menuContent.style.display === ""
+        ) {
+          menuContent.style.display = "block";
+        } else {
+          menuContent.style.display = "none";
+        }
+      });
+
+      // Close menu on button click
+      closeMenu.addEventListener("click", () => {
+        menuContent.style.display = "none";
+      });
     </script>
   </body>
 </html>

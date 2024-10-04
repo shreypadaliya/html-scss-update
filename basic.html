@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Hamburger Menu</title>
+    <style>
+        /* Styles for screen sizes below 768px */
+        @media (max-width: 767.97px) {
+            .hamburger-menu {
+                cursor: pointer;
+                font-size: 30px;
+                padding: 10px;
+                background-color: #333;
+                color: white;
+            }
+        }
+
+        .hamburger-menu {
+            cursor: pointer;
+            font-size: 30px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        .menu-content {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            background-color: cyan;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hamburger-menu" id="hamburgerMenu">☰</div>
+    <div class="menu-content" id="menuContent">
+        <p>Your menu content goes here!</p>
+        <button id="closeMenu">Close Menu</button>
+    </div>
+
+    <script>
+        const hamburgerMenu = document.getElementById("hamburgerMenu");
+        const menuContent = document.getElementById("menuContent");
+        const closeMenu = document.getElementById("closeMenu");
+
+        // Toggle menu visibility on hamburger menu click
+        hamburgerMenu.addEventListener("click", () => {
+            console.log('object')
+            if (
+                menuContent.style.display === "none" ||
+                menuContent.style.display === ""
+            ) {
+                menuContent.style.display = "block";
+            } else {
+                menuContent.style.display = "none";
+            }
+        });
+
+        // Close menu on button click
+        closeMenu.addEventListener("click", () => {
+            menuContent.style.display = "none";
+        });
+    </script>
+
+</body>
+</html>

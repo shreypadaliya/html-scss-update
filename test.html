@@ -1,57 +1,1019 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<link rel="stylesheet" href="./sass/main.css">
-<body>
-    <div style="height: auto">
-        <h6 class="card-title">Your level</h6>
-        <h5 class="level-title">Elementary</h5>
-        <div class="d-flex justify-content-between level-labels">
-          <span>A1</span>
-          <span>A2</span>
-          <span>B1</span>
-          <span>B2</span>
-          <span>C1</span>
-          <span>C2</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dubai Language</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="./sass/main.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <style>
+      @media (max-width: 991px) {
+        .navtag {
+          display: none;
+        }
+        .logocontainer {
+          display: none;
+        }
+      }
+      @media (max-width: 767.98px) {
+        .sidebar {
+          display: none !important;
+        }
+      }
+      .navtag,
+      .logocontainer {
+        display: block;
+      }
+      .hide {
+        display: none; 
+      }
+      .hamburger-menu {
+        display: none;
+        font-size: 30px;
+        cursor: pointer;
+      }
+      .menu-content {
+          display: none;
+          position: absolute;
+          top: 50px;
+          left: 10px;
+          background-color: cyan;
+          border: 1px solid #ccc;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          z-index: 1000;
+        }
+      @media (max-width: 767.97px) {
+        .hamburger-menu {
+          display: block;
+          cursor: pointer;
+          font-size: 30px;
+          padding: 10px;
+          background-color: #333;
+          color: white;
+        }
+        .menu-content {
+          display: none;
+          position: absolute;
+          top: 50px;
+          left: 10px;
+          background-color: cyan;
+          border: 1px solid #ccc;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          z-index: 1000;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div style="background-color: blue; display: flex">
+      <div
+        class="sidebar"
+        style="
+          background-color: rgb(255, 255, 255);
+          height: auto;
+          width: auto;
+          max-width: 250px;
+          display: block;
+        "
+      >
+        <div
+          class="d-flex justify-content-between align-items-center mt-3 mb-2 p-2"
+        >
+          <div>
+            <img
+              src="assets/Group 7011.png"
+              alt="Logo"
+              style="height: auto; width: auto"
+              class="logocontainer"
+            />
+          </div>
+          <button
+            id="toggleBtn"
+            class="sidebaricon d-flex justify-content-center align-items-center border border-white"
+            style="height: 30px; width: 30px; background-color: #f3f5f9"
+          >
+            <i class="fa-solid fa-greater-than"></i>
+          </button>
         </div>
-        <div class="level-progress">
-          <div class="progress">
-            <div
-              class="progress-bar"
-              id="levelProgressBar"
-              role="progressbar"
-              style="width: 16.67%"
-            ></div>
+
+        <div id="toggle">
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <div class="navtag">Dashboard</div>
+          </div>
+
+          <!-- Repeat these elements as needed -->
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
+          </div>
+          <div
+            class="sidenav"
+            style="
+              display: flex;
+              gap: 15px;
+              align-items: center;
+              padding: 15px 20px;
+            "
+          >
+            <div style="background-color: #f3f5f9; height: 100%; width: auto">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="navtag">Induction Documents</div>
           </div>
         </div>
-        <h6 class="mt-4">Remaining weeks</h6>
-        <h5 class="weeks-title mt-2">10 weeks</h5>
-        <div class="progress my-2">
-          <div
-            class="progress-bar bg-dark"
-            id="weeksProgressBar"
-            role="progressbar"
-            style="width: 41.67%"
-          ></div>
+      </div>
+      <div class="positioningbox2" style="flex: 7; background-color: #f3f5f9">
+        <div
+          class="d-flex align-items-center justify-content-between"
+          style="background-color: #f3f5f9; height: 80px; padding: 0 20px"
+        >
+          <div class="hamburger-menu" id="hamburgerMenu">☰</div>
+          <div class="menu-content" id="menuContent">
+            <p>Your menu content goes here!</p>
+            <button id="closeMenu">Close Menu</button>
+          </div>
+          <div></div>
+          <div class="d-flex align-items-center" style="gap: 20px">
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-secondary"
+              style="
+                background-color: #eaedf5;
+                color: #303335;
+                font-size: 14px;
+                font-weight: normal;
+              "
+            >
+              Enter to your live class
+            </button>
+            <img
+              src="assets/Group 6956.png"
+              alt="Profile"
+              class="profile-img"
+              style="height: 20px; width: 20px"
+            />
+            <img
+              src="assets/Group 6953.png"
+              alt="Profile"
+              class="profile-img"
+            />
+            <div class="fs-5 fw-normal">Andrea Paez</div>
+          </div>
         </div>
-        <div class="d-flex justify-content-between">
-          <span>0</span>
-          <span>24</span>
-        </div>
-        <h6 class="mt-4">Course end date</h6>
-        <h5 class="date-title mt-3">11, Apr, 2019</h5>
-        <div class="progress my-2">
-          <div
-            class="progress-bar"
-            id="dateProgressBar"
-            role="progressbar"
-            style="width: 41.67%"
-          ></div>
+        <div style="margin-top: 30px">
+          <div class="container-fluid">
+            <div
+              class="row positioningbox2"
+              style="
+                background-color: #f3f5f9;
+                justify-content: center;
+                gap: 20px;
+              "
+            >
+              <div
+                class="col-md-11 col-lg-4 col-xl-2"
+                style="background-color: white; padding: 20px"
+              >
+                <div>
+                  <h6 class="card-title">Your level</h6>
+                  <h5 class="level-title">Elementary</h5>
+                  <div class="d-flex justify-content-between level-labels">
+                    <span>A1</span>
+                    <span>A2</span>
+                    <span>B1</span>
+                    <span>B2</span>
+                    <span>C1</span>
+                    <span>C2</span>
+                  </div>
+                  <div class="level-progress">
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        id="levelProgressBar"
+                        role="progressbar"
+                        style="width: 16.67%"
+                      ></div>
+                    </div>
+                  </div>
+                  <h6 class="mt-4">Remaining weeks</h6>
+                  <h5 class="weeks-title mt-2">10 weeks</h5>
+                  <div class="progress my-2">
+                    <div
+                      class="progress-bar bg-dark"
+                      id="weeksProgressBar"
+                      role="progressbar"
+                      style="width: 41.67%"
+                    ></div>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span>0</span>
+                    <span>24</span>
+                  </div>
+                  <h6 class="mt-4">Course end date</h6>
+                  <h5 class="date-title mt-3">11, Apr, 2019</h5>
+                  <div class="progress my-2">
+                    <div
+                      class="progress-bar"
+                      id="dateProgressBar"
+                      role="progressbar"
+                      style="width: 41.67%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-11 col-lg-7 col-xl-6"
+                style="background-color: white; padding: 10px 20px"
+              >
+                <div class="mb-3">
+                  <h5>My classes</h5>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: white;
+                    gap: 15px;
+                  "
+                >
+                  <div
+                    style="
+                      width: 100%;
+                      background-color: #f3f5f9;
+                      flex-direction: row;
+                      align-items: center;
+                      justify-content: center;
+                      display: flex;
+                    "
+                  >
+                    <div
+                      style="
+                        width: 20%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
+                    >
+                      <img
+                        src="assets/Group 6916.png"
+                        alt="Tom Hudd"
+                        style="height: 80%; width: 80%"
+                      />
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        flex-direction: column;
+                      "
+                    >
+                      <div
+                        style="
+                          width: 100%;
+                          flex-direction: row;
+                          align-items: center;
+                          justify-content: space-between;
+                          display: flex;
+                          padding-top: 10px;
+                        "
+                      >
+                        <div style="width: 60%">
+                          <h6>Tom Hudd</h6>
+                          <div class="status">
+                            <span>Online</span>
+                            <span class="status-dot"></span>
+                          </div>
+                        </div>
+                        <div
+                          style="
+                            background-color: #333333;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 30px;
+                            color: white;
+                            padding: 0.2rem 0.6rem;
+                          "
+                        >
+                          preintermidiate
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          width: 100%;
+                          flex-direction: row;
+                          align-items: center;
+                          justify-content: center;
+                          display: flex;
+                        "
+                      >
+                        <div
+                          style="
+                            width: 25%;
+                            height: 100%;
+                            border-right: 1px solid gray;
+                          "
+                        >
+                          <div class="classesname">Schedule:</div>
+                          <div class="classinfo">12:00 - 13:00</div>
+                        </div>
+                        <div
+                          style="
+                            height: 100%;
+                            border-right: 1px solid gray;
+                            padding-left: 5px;
+                          "
+                        >
+                          <div class="classesname">Campus:</div>
+                          <div class="classinfo">JLT Masaya</div>
+                        </div>
+                        <div
+                          style="
+                            height: 100%;
+                            border-right: 1px solid gray;
+                            padding-left: 5px;
+                          "
+                        >
+                          <div class="classesname">Floor:</div>
+                          <div class="classinfo">36th</div>
+                        </div>
+                        <div
+                          style="height: 100%; padding: 10px; padding-left: 5px"
+                        >
+                          <div class="classesname">Classroom:</div>
+                          <div class="classinfo">10</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      width: 100%;
+                      background-color: #f3f5f9;
+                      flex-direction: row;
+                      align-items: center;
+                      justify-content: center;
+                      display: flex;
+                    "
+                  >
+                    <div
+                      style="
+                        width: 20%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
+                    >
+                      <img
+                        src="assets/Group 6916.png"
+                        alt="Tom Hudd"
+                        style="height: 80%; width: 80%"
+                      />
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        flex-direction: column;
+                      "
+                    >
+                      <div
+                        style="
+                          width: 100%;
+                          flex-direction: row;
+                          align-items: center;
+                          justify-content: space-between;
+                          display: flex;
+                          padding-top: 10px;
+                        "
+                      >
+                        <div style="width: 60%">
+                          <h6>Tom Hudd</h6>
+                          <div class="status">
+                            <span>Online</span>
+                            <span class="status-dot"></span>
+                          </div>
+                        </div>
+                        <div
+                          style="
+                            background-color: #333333;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 30px;
+                            color: white;
+                            padding: 0.2rem 0.6rem;
+                          "
+                        >
+                          preintermidiate
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          width: 100%;
+                          flex-direction: row;
+                          align-items: center;
+                          justify-content: center;
+                          display: flex;
+                        "
+                      >
+                        <div
+                          style="
+                            width: 25%;
+                            height: 100%;
+                            border-right: 1px solid gray;
+                          "
+                        >
+                          <div class="classesname">Schedule:</div>
+                          <div class="classinfo">12:00 - 13:00</div>
+                        </div>
+                        <div
+                          style="
+                            height: 100%;
+                            border-right: 1px solid gray;
+                            padding-left: 5px;
+                          "
+                        >
+                          <div class="classesname">Campus:</div>
+                          <div class="classinfo">JLT Masaya</div>
+                        </div>
+                        <div
+                          style="
+                            height: 100%;
+                            border-right: 1px solid gray;
+                            padding-left: 5px;
+                          "
+                        >
+                          <div class="classesname">Floor:</div>
+                          <div class="classinfo">36th</div>
+                        </div>
+                        <div
+                          style="height: 100%; padding: 10px; padding-left: 5px"
+                        >
+                          <div class="classesname">Classroom:</div>
+                          <div class="classinfo">10</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-11 col-lg-6 col-xl-3"
+                style="background-color: white; padding: 20px 10px"
+              >
+                <div class="d-flex" style="height: 20%">
+                  <h5 class="card-title2 ps-3">Attendance</h5>
+                </div>
+                <div
+                  class="d-flex"
+                  style="
+                    height: 75%;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    border-radius: 10px;
+                  "
+                >
+                  <div class="card-body">
+                    <div
+                      class="attendance-container d-flex justify-content-between align-items-center"
+                    >
+                      <div class="attendance-legend">
+                        <div class="legend-item" style="font-size: 15px">
+                          <div class="legend-color present"></div>
+                          Present
+                        </div>
+                        <div class="legend-item" style="font-size: 15px">
+                          <div class="legend-color late"></div>
+                          Late
+                        </div>
+                        <div class="legend-item" style="font-size: 15px">
+                          <div class="legend-color absent"></div>
+                          Absent
+                        </div>
+                        <div class="legend-item" style="font-size: 15px">
+                          <div class="legend-color holiday"></div>
+                          Holiday
+                        </div>
+                      </div>
+                      <div
+                        class="chart-container"
+                        style="height: 50%; width: 50%"
+                      >
+                        <canvas id="attendanceChart"></canvas>
+                        <div class="chart-center-text">
+                          <span class="present-label">Present</span>
+                          <span class="present-value">93.98%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-11 col-lg-5 col-xl-2"
+                style="background-color: white; padding: 20px"
+              >
+                <div
+                  class="card-body text-center d-flex flex-column align-items-center"
+                >
+                  <h5
+                    class="card-title3 fs-5 fw-normal"
+                    style="line-height: 27px"
+                  >
+                    Meet Sophia!
+                  </h5>
+                  <p
+                    class="card-text mb-4 fs-5 fw-normal"
+                    style="line-height: 27px"
+                  >
+                    Your virtual assistant
+                  </p>
+                  <button
+                    class="btn shipiabutton mb-3"
+                    style="
+                      background-color: #ff8200;
+                      font-size: 14px;
+                      color: #ffffff;
+                    "
+                  >
+                    Ask any question
+                  </button>
+                  <img
+                    src="assets/Group 6934.png"
+                    alt="Sophia"
+                    class="rounded-circle mb-3"
+                    style="object-fit: contain; margin-inline: auto"
+                    height="60%"
+                    width="60%"
+                  />
+                </div>
+              </div>
+              <div
+                class="col-md-11 col-lg-7 col-xl-6"
+                style="background-color: white; padding: 20px"
+              >
+                <div
+                  style="width: 100%; height: fit-content"
+                  class="mb-3 card-title2"
+                >
+                  Social Activity
+                </div>
+                <div style="display: flex">
+                  <div style="width: 30%">
+                    <img
+                      src="assets/image.png"
+                      alt="Dubai Walk"
+                      style="height: 100%; width: 100%"
+                    />
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: column;
+                      background-color: #f3f5f9;
+                      width: 70%;
+                      padding: 25px;
+                    "
+                  >
+                    <h5 style="font-size: 24px">Downtown Dubai walk</h5>
+                    <div class="activitygap" style="display: flex">
+                      <div
+                        style="display: flex; flex-direction: column; gap: 5px"
+                      >
+                        <div>Price:</div>
+                        <div style="font-weight: bold">600 GBP</div>
+                      </div>
+                      <div
+                        style="display: flex; flex-direction: column; gap: 5px"
+                      >
+                        <div>Date:</div>
+                        <div style="font-weight: bold">Wed. 30th</div>
+                      </div>
+                      <div
+                        style="display: flex; flex-direction: column; gap: 5px"
+                      >
+                        <div>Schedule:</div>
+                        <div style="font-weight: bold">11:00 - 13:00</div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-3"
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        align-items: flex-start;
+                        justify-content: space-between;
+                      "
+                    >
+                      <div>
+                        <div style="font-size: 14px; color: #666">
+                          Activity status
+                        </div>
+                        <div style="color: green">Active ●</div>
+                      </div>
+                      <button
+                        style="
+                          background-color: #ff8200;
+                          color: white;
+                          padding: 10px 20px;
+                          border: none;
+                          border-radius: 5px;
+                          cursor: pointer;
+                        "
+                      >
+                        Register
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-11 col-lg-4 col-xl-3"
+                style="background-color: white; padding: 20px"
+              >
+                <h5 class="custom-card-title">My test results</h5>
+                <div class="d-flex justify-content-end">
+                  <button
+                    class="btn btn-light mb-3 custom-dropdown-toggle"
+                    type="button"
+                    id="customDropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    My test Results
+                  </button>
+                </div>
+                <div class="custom-chart-container">
+                  <div class="custom-dropdown mt-3 text-end">
+                    <ul
+                      class="dropdown-menu"
+                      aria-labelledby="customDropdownMenuButton"
+                    >
+                      <li><a class="dropdown-item" href="#">Result 1</a></li>
+                      <li><a class="dropdown-item" href="#">Result 2</a></li>
+                      <li><a class="dropdown-item" href="#">Result 3</a></li>
+                    </ul>
+                  </div>
+                  <canvas id="customTestResultsChart"></canvas>
+                </div>
+                <div class="custom-legend mt-2">
+                  <div class="custom-legend-item">
+                    <div
+                      class="custom-legend-color custom-legend-student"
+                    ></div>
+                    <span>Student score</span>
+                  </div>
+                  <div class="custom-legend-item">
+                    <div class="custom-legend-color custom-legend-class"></div>
+                    <span>Class average score</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="d-flex justify-content-between"
+              style="
+                background-color: #f3f5f9;
+                height: 8vh;
+                align-items: center;
+                width: auto;
+                padding: 40px;
+              "
+            >
+              <div></div>
+              <div>powered by studybox ai @2024</div>
+              <!-- <div> -->
+              <div class="d-flex gap-3">
+                <a
+                  href="#"
+                  class="d-flex justify-content-center align-items-center bg-dark rounded-circle"
+                  style="width: 35px; height: 35px; cursor: pointer"
+                >
+                  <img
+                    src="assets/Path 12944.png"
+                    alt="YouTube"
+                    style="
+                      max-width: 15px;
+                      max-height: 15px;
+                      width: 100%;
+                      height: auto;
+                    "
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="d-flex justify-content-center align-items-center bg-dark rounded-circle"
+                  style="width: 35px; height: 35px; cursor: pointer"
+                >
+                  <img
+                    src="assets/Path 12939.png"
+                    alt="Facebook"
+                    style="
+                      max-width: 15px;
+                      max-height: 15px;
+                      width: 100%;
+                      height: auto;
+                    "
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="d-flex justify-content-center align-items-center bg-dark rounded-circle"
+                  style="width: 35px; height: 35px; cursor: pointer"
+                >
+                  <img
+                    src="assets/Group 6946.png"
+                    alt="Instagram"
+                    style="
+                      max-width: 15px;
+                      max-height: 15px;
+                      width: 100%;
+                      height: auto;
+                    "
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="d-flex justify-content-center align-items-center bg-dark rounded-circle"
+                  style="width: 35px; height: 35px; cursor: pointer"
+                >
+                  <img
+                    src="assets/Path 12943.png"
+                    alt="TikTok"
+                    style="
+                      max-width: 15px;
+                      max-height: 15px;
+                      width: 100%;
+                      height: auto;
+                    "
+                  />
+                </a>
+              </div>
+              <!-- </div> -->
+            </div>
+          </div>
         </div>
       </div>
-</body>
+    </div>
+    <script src="./javascript/attendence.js"></script>
+    <script src="./javascript/sidebartoggle.js"></script>
+    <script src="./javascript/testresult.js"></script>
+    <script src="./javascript/sidebaropen.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const toggleBtn = document.getElementById("toggleBtn");
+      const navtags = document.querySelectorAll(".navtag"); // Get all navtag elements
+      const logocontainer = document.querySelector(".logocontainer"); // Get logo
+
+      toggleBtn.addEventListener("click", function () {
+        // Toggle the logo visibility
+        logocontainer.classList.toggle("hide");
+
+        // Loop through all navtags and toggle the hide class
+        navtags.forEach(function (navtag) {
+          navtag.classList.toggle("hide");
+        });
+      });
+    </script>
+    <script>
+      document
+        .getElementById("hamburgerMenu")
+        .addEventListener("click", function () {
+          const positioningBox1 = document.querySelector(".positioningbox1");
+          positioningBox1.classList.toggle("sidebar"); // Toggle 'open' class to show or hide sidebar
+
+          // Optional: Change the hamburger icon to an "X" when open
+          this.innerHTML = positioningBox1.classList.contains("open")
+            ? "✖"
+            : "☰";
+        });
+    </script>
+    <script>
+      const hamburgerMenu = document.getElementById("hamburgerMenu");
+      const menuContent = document.getElementById("menuContent");
+      const closeMenu = document.getElementById("closeMenu");
+
+      // Toggle menu visibility on hamburger menu click
+      hamburgerMenu.addEventListener("click", () => {
+        if (
+          menuContent.style.display === "none" ||
+          menuContent.style.display === ""
+        ) {
+          menuContent.style.display = "block";
+        } else {
+          menuContent.style.display = "none";
+        }
+      });
+
+      // Close menu on button click
+      closeMenu.addEventListener("click", () => {
+        menuContent.style.display = "none";
+      });
+    </script>
+  </body>
 </html>
